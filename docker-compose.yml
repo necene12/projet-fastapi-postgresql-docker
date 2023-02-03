@@ -1,0 +1,18 @@
+version: '3'
+services:
+  api_db_postgresql:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      DB_URI: postgresql://metoo:123test@db/db_postgresql
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+  db:
+    image: postgres:12
+    environment:
+      POSTGRES_USER: metoo
+      POSTGRES_PASSWORD: 123test
+      POSTGRES_DB: db_postgresql
