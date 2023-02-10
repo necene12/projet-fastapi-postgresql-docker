@@ -26,7 +26,7 @@ products = Table('products', metadata,
     Column('weight', String)    
 )
 
-"""price = Table('price', metadata,
+price = Table('price', metadata,
     Column('product_id', String, primary_key=True),
     Column('amountMax', String),
     Column('amountMin', String),
@@ -38,7 +38,7 @@ products = Table('products', metadata,
     Column('merchant', String),
     Column('shipping', String),
     Column('sourceURLs', String) 
-)"""
+)
 
 @app.post("/create_files")
 def create_file():
